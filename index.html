@@ -168,30 +168,54 @@
             <p>Founded by Jazz, a passionate and skilled computer technician, we bring years of hands-on experience to every repair. No job is too big or too small for our team. We treat every device like it's our own and provide the highest level of service possible.</p>
         </section>
 
-        <!-- Additional sections (Contact, Testimonials, Booking, etc.) would go here -->
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="tech-background">
+            <h2><i class="fas fa-comments icon"></i>What Our Clients Say</h2>
+            <p>"Jazz is incredibly knowledgeable and professional. My laptop has never worked better!" - Client A</p>
+            <p>"I was amazed at how quickly my computer was repaired. Highly recommend!" - Client B</p>
+            <p>"Fantastic service! Jazz is my go-to for all tech issues." - Client C</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="tech-background">
+            <h2><i class="fas fa-envelope icon"></i>Contact Us</h2>
+            <p>If you have any questions or would like to schedule a service, please contact us:</p>
+            <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            <p>We look forward to hearing from you!</p>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking" class="tech-background">
+            <h2><i class="fas fa-calendar-alt icon"></i>Book Your Appointment</h2>
+            <p>Schedule a repair service with us:</p>
+            <script id="setmore_script" type="text/javascript" src="https://storage.googleapis.com/fullintegration-live/webComponentAppListing/Container/setmoreIframeLive.js"></script>
+            <a style="float:none;" id="Setmore_button_iframe" href="https://booking.setmore.com/scheduleappointment/743f9982-f8df-4945-b677-61c428baccc5">
+                <img border="none" src="https://assets.setmore.com/setmore/images/2.0/Settings/book-now-black.svg" alt="Book an appointment with Repairs By Jazz using Setmore"/>
+            </a>
+        </section>
     </main>
     <footer>
-        <p>&copy; 2024 Repairs By Jazz. All Rights Reserved.</p>
+        <p>&copy; 2024 Repairs by Jazz. All rights reserved.</p>
+        <p><a href="https://repairsbyjazz.static.domains/terms" style="color: #ff69b4;">Terms and Conditions</a></p>
     </footer>
-
-    <!-- Chatling Integration -->
-    <script>
-        window.chtlConfig = { chatbotId: "7913538564" };
-    </script>
-    <script async data-id="7913538564" id="chatling-embed-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
-
     <script>
         function showSection(sectionId) {
             // Hide all sections
-            const sections = document.querySelectorAll('section');
+            const sections = document.querySelectorAll('main > section');
             sections.forEach(section => section.classList.remove('active'));
 
             // Show the selected section
-            const selectedSection = document.getElementById(sectionId);
-            if (selectedSection) {
-                selectedSection.classList.add('active');
-            }
+            const activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
         }
+
+        // Show the home section by default
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('home');
+        });
     </script>
+
+<script src="https://static.app/js/static.js" type="text/javascript"></script>
 </body>
 </html>
