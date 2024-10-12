@@ -7,26 +7,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
             color: #333;
         }
-        header, footer {
+        header {
             background-color: #333;
             color: #fff;
             padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         header img {
-            width: 150px; /* Adjust this to your preference */
-            height: auto; /* Maintains aspect ratio */
-            margin-bottom: 10px; /* Space between logo and title */
+            width: 150px;
+            height: auto;
+            margin-bottom: 10px;
         }
         header h1 {
             color: #ff69b4;
-            margin: 0; /* Remove default margin */
+            margin: 0;
+            font-size: 2.5em;
         }
         nav ul {
             list-style-type: none;
@@ -34,6 +36,7 @@
             margin: 0;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
         nav ul li {
             margin: 0 15px;
@@ -49,7 +52,7 @@
         }
         main {
             padding: 20px;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         section {
@@ -64,23 +67,24 @@
         section.active {
             display: block;
         }
-        h1, h2 {
-            color: #333;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
         h2 {
             font-size: 2em;
             margin-bottom: 10px;
+            color: #ff69b4;
         }
         p {
             line-height: 1.6;
+            margin: 10px 0;
         }
         ul {
             list-style-type: disc;
             padding-left: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
         }
         footer p {
             margin: 0;
@@ -117,7 +121,31 @@
         }
         .icon {
             margin-right: 10px;
-            font-size: 1.5em; /* Increased icon size */
+            font-size: 1.5em;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input, textarea {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ff1493;
         }
     </style>
 </head>
@@ -171,34 +199,42 @@
         <!-- Contact Section -->
         <section id="contact" class="tech-background">
             <h2><i class="fas fa-envelope icon"></i>Contact Us</h2>
-            <p>If you have any questions, feel free to reach out:</p>
-            <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-            <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+            <p>If you have any questions or need further information, feel free to reach out to us through the form below or via email.</p>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
         </section>
 
         <!-- Testimonials Section -->
         <section id="testimonials" class="tech-background">
-            <h2><i class="fas fa-comments icon"></i>Testimonials</h2>
-            <p>"Fast and reliable service! Jazz fixed my computer in no time!" - Happy Customer</p>
-            <p>"Great experience! Highly recommend Repairs by Jazz for any computer issues." - Satisfied Client</p>
+            <h2><i class="fas fa-comments icon"></i>What Our Clients Say</h2>
+            <p>"Repairs by Jazz was amazing! They fixed my laptop quickly and at a reasonable price." - Client A</p>
+            <p>"I was impressed by their professionalism and quick response. Highly recommended!" - Client B</p>
+            <p>"Jazz is very knowledgeable and helped me recover important files I thought were lost." - Client C</p>
         </section>
 
         <!-- Booking Section -->
         <section id="booking" class="tech-background">
-            <h2><i class="fas fa-calendar-alt icon"></i>Book a Service Appointment</h2>
-            <p>To schedule an appointment, please click the button below:</p>
-            <div id="setmore-embed" style="margin: 20px 0;">
-                <iframe src="https://my.setmore.com/bookingpage/0e7b34c3-24ed-4895-8a2d-4c8182ccaf4a" width="100%" height="600px" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <p>We look forward to serving you!</p>
+            <h2><i class="fas fa-calendar-alt icon"></i>Book an Appointment</h2>
+            <p>Ready to get your device repaired? Click below to book your appointment!</p>
+            <a href="#" class="button">Book Now</a>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Repairs by Jazz. All rights reserved.</p>
+        <p>&copy; 2024 Repairs by Jazz. All Rights Reserved.</p>
     </footer>
     <script>
         function showSection(sectionId) {
-            const sections = document.querySelectorAll('section');
+            const sections = document.querySelectorAll('main section');
             sections.forEach(section => {
                 section.classList.remove('active');
             });
