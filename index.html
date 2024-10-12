@@ -10,7 +10,7 @@
             background: linear-gradient(to bottom right, #ff4081, #1976d2);
             margin: 0;
             padding: 0;
-            color: #fff;
+            color: #000; /* Set default text color to black */
         }
         header {
             background-color: #000;
@@ -37,13 +37,14 @@
             display: none;
         }
         .content {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: #fff; /* White background for the content box */
             padding: 40px;
             margin: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
             height: calc(100vh - 160px); /* Adjust height to fill the page */
             overflow: auto; /* Allows scrolling if content exceeds */
+            color: #000; /* Set text color for better visibility */
         }
         footer {
             text-align: center;
@@ -57,13 +58,19 @@
         .logo {
             max-width: 150px;
         }
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(to right, #ff4081, #1976d2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     </style>
 </head>
 <body>
 
 <header>
     <img src="logo#2.png" alt="Repairs By Jazz" class="logo">
-    <h1>Repairs By Jazz</h1>
+    <h1 class="gradient-text">Repairs By Jazz</h1>
     <nav>
         <a href="#" onclick="showPage('home')">Home</a>
         <a href="#" onclick="showPage('services')">Services</a>
@@ -75,7 +82,7 @@
 </header>
 
 <div id="home" class="content">
-    <h2>Welcome to Repairs by Jazz</h2>
+    <h2 class="gradient-text">Welcome to Repairs by Jazz</h2>
     <p>Welcome to Repairs by Jazz, your trusted partner for fast, reliable, and affordable computer repair services. Our dedicated team of expert technicians is here to solve all your tech problems, ensuring your devices are back up and running in no time!</p>
     <p>Whether it's a minor hardware glitch or a complex software issue, we have you covered. Our commitment to quality service means that we use the latest tools and techniques to tackle any problem effectively. With years of experience in the field, we guarantee that you will receive top-notch service every time you visit us.</p>
     <p>Our friendly technicians are passionate about technology and customer service. We believe in keeping our clients informed throughout the repair process, so you always know what's happening with your device.</p>
@@ -84,7 +91,7 @@
 </div>
 
 <div id="services" class="content hidden">
-    <h2>Our Services</h2>
+    <h2 class="gradient-text">Our Services</h2>
     <p>At Repairs by Jazz, we offer a comprehensive range of services to cater to all your computer needs. Our services include:</p>
     <ul>
         <li><strong>Hardware Repairs:</strong> From broken screens to malfunctioning components, we can fix it all. Our skilled technicians have the expertise to repair or replace damaged parts efficiently, ensuring your device is restored to optimal condition.</li>
@@ -97,7 +104,7 @@
 </div>
 
 <div id="about" class="content hidden">
-    <h2>About Us</h2>
+    <h2 class="gradient-text">About Us</h2>
     <p>Repairs By Jazz is a locally owned and operated business dedicated to providing high-quality computer repair services. Our mission is to deliver exceptional customer service and technical expertise while ensuring your satisfaction.</p>
     <p>With a team of skilled technicians, we stay up to date with the latest technology trends and repair techniques. This allows us to offer effective solutions for any computer-related issue you may encounter.</p>
     <p>We understand the importance of your devices in your daily life. That’s why we treat each repair with the utmost care and attention, ensuring that your equipment is in the best hands.</p>
@@ -105,7 +112,7 @@
 </div>
 
 <div id="contact" class="content hidden">
-    <h2>Contact Us</h2>
+    <h2 class="gradient-text">Contact Us</h2>
     <p>If you have any inquiries or need assistance, please feel free to reach out to us:</p>
     <p>Email: <a href="mailto:info@repairsbyjazz.com" style="color: #ff4081;">info@repairsbyjazz.com</a></p>
     <p>Phone: <a href="tel:+1234567890" style="color: #ff4081;">(123) 456-7890</a></p>
@@ -113,7 +120,7 @@
 </div>
 
 <div id="testimonials" class="content hidden">
-    <h2>Testimonials</h2>
+    <h2 class="gradient-text">Testimonials</h2>
     <p>Our customers are our best advocates! Here’s what some of them have to say:</p>
     <blockquote>
         <p>"Great service! My laptop was fixed within a day!" - <em>Happy Customer</em></p>
@@ -125,7 +132,7 @@
 </div>
 
 <div id="booking" class="content hidden">
-    <h2>Booking</h2>
+    <h2 class="gradient-text">Booking</h2>
     <p>Ready to get your device repaired? To book an appointment, click the link below:</p>
     <a href="https://booking.setmore.com/scheduleappointment/743f9982-f8df-4945-b677-61c428baccc5" target="_blank" style="color: #ff4081; font-weight: bold; text-decoration: underline;">Book Now</a>
     <p>We look forward to serving you and getting your devices back in top shape! Our easy booking process is designed to fit your schedule. Don't wait—get your tech troubles resolved today!</p>
@@ -143,10 +150,6 @@
         });
         document.getElementById(page).classList.remove('hidden');
     }
-
-    // Show home page by default
-    showPage('home');
 </script>
-
 </body>
 </html>
