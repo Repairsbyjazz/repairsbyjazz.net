@@ -1,244 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repairs by Jazz</title>
+    <title>Repairs By Jazz</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-color: #f4f4f4;
             color: #333;
         }
+
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
+            background-color: #252525;
+            color: #e91e63;
+            padding: 10px 0;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        header img {
-            width: 150px;
-            height: auto;
-            margin-bottom: 10px;
-        }
-        header h1 {
-            color: #ff69b4;
+
+        h1 {
             margin: 0;
             font-size: 2.5em;
         }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+
+        nav {
+            margin: 10px 0;
         }
-        nav ul li {
+
+        nav a {
+            color: #e91e63;
             margin: 0 15px;
-        }
-        nav ul li a {
             text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-            transition: color 0.3s;
+            font-size: 1.2em;
         }
-        nav ul li a:hover {
-            color: #ff69b4;
-        }
-        main {
+
+        .container {
             padding: 20px;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: auto;
         }
-        section {
-            display: none;
-            padding: 40px;
-            background: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            margin-bottom: 40px;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        section.active {
-            display: block;
-        }
-        h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-            color: #ff69b4;
-        }
-        p {
-            line-height: 1.6;
-            margin: 10px 0;
-        }
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        footer p {
-            margin: 0;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: #ff69b4;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .button:hover {
-            background-color: #ff1493;
-        }
-        .tech-background {
-            background: linear-gradient(135deg, #ff69b4 25%, #1e90ff 75%);
-            color: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .icon {
-            margin-right: 10px;
-            font-size: 1.5em;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        input, textarea {
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px;
-            background-color: #ff69b4;
+
+        .hero {
+            background: linear-gradient(to right, #ff4081, #3f51b5);
             color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #252525;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .button {
+            background-color: #e91e63;
+            color: white;
+            padding: 10px 20px;
             border: none;
             border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+            text-decoration: none;
+            font-size: 1.2em;
         }
-        button:hover {
-            background-color: #ff1493;
+
+        .services {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .service-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            flex: 1 0 30%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-item h3 {
+            color: #e91e63;
+        }
+
+        @media (max-width: 768px) {
+            .service-item {
+                flex: 1 0 100%;
+            }
         }
     </style>
 </head>
+
 <body>
     <header>
-        <img src="RepairsbyJazzLogo.webp" alt="Repairs By Jazz Logo">
         <h1>Repairs By Jazz</h1>
         <nav>
-            <ul>
-                <li><a href="#" onclick="showSection('home')"><i class="fas fa-home icon"></i>Home</a></li>
-                <li><a href="#" onclick="showSection('services')"><i class="fas fa-tools icon"></i>Services</a></li>
-                <li><a href="#" onclick="showSection('about')"><i class="fas fa-info-circle icon"></i>About Us</a></li>
-                <li><a href="#" onclick="showSection('contact')"><i class="fas fa-envelope icon"></i>Contact</a></li>
-                <li><a href="#" onclick="showSection('testimonials')"><i class="fas fa-comments icon"></i>Testimonials</a></li>
-                <li><a href="#" onclick="showSection('booking')"><i class="fas fa-calendar-alt icon"></i>Booking</a></li>
-            </ul>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="https://your-setmore-link.com" target="_blank">Booking</a>
         </nav>
     </header>
-    <main>
-        <!-- Home Section -->
-        <section id="home" class="active tech-background">
-            <h2><i class="fas fa-laptop-house icon"></i>Your Trusted Computer Repair Service</h2>
+
+    <div class="container" id="home">
+        <div class="hero">
+            <h2>Computer Repair Service</h2>
             <p>Welcome to Repairs by Jazz, where we provide fast, reliable, and affordable computer repair services. Our expert technicians are dedicated to getting your devices up and running in no time!</p>
-            <p>Whether it's a hardware issue, software problem, or data recovery, we're here to help. With years of experience and a commitment to quality, we stand by our work and strive for excellence in every job.</p>
-            <p>Our friendly technicians will guide you through the repair process, ensuring you understand what's happening every step of the way.</p>
-            <a href="#" class="button" onclick="showSection('services')">Explore Our Services</a>
-        </section>
+            <a class="button" href="#services">Explore Our Services</a>
+        </div>
+    </div>
 
-        <!-- Services Section -->
-        <section id="services" class="tech-background">
-            <h2><i class="fas fa-cogs icon"></i>Our Comprehensive Services</h2>
-            <ul>
-                <li><i class="fas fa-shield-virus icon"></i>**Virus Removal** - Keep your computer safe from malware and viruses with our thorough scanning and removal process.</li>
-                <li><i class="fas fa-tools icon"></i>**Hardware Repair** - From screen replacements to internal component repairs, we fix all types of hardware issues.</li>
-                <li><i class="fas fa-download icon"></i>**Software Installation** - We install and configure software for optimal performance, ensuring a hassle-free experience.</li>
-                <li><i class="fas fa-database icon"></i>**Data Recovery** - Recover lost or deleted data with our advanced techniques to retrieve your important files.</li>
-                <li><i class="fas fa-desktop icon"></i>**Custom Builds** - Build your dream PC tailored to your needs for gaming, work, or content creation.</li>
-            </ul>
-            <p>Contact us for any questions or consultations about our services!</p>
-        </section>
+    <div class="container" id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service-item">
+                <h3>Hardware Repair</h3>
+                <p>We fix all hardware issues, including broken screens, battery replacements, and more.</p>
+            </div>
+            <div class="service-item">
+                <h3>Software Troubleshooting</h3>
+                <p>Our team can resolve software problems and optimize your system for better performance.</p>
+            </div>
+            <div class="service-item">
+                <h3>Data Recovery</h3>
+                <p>We offer professional data recovery services to retrieve your important files and documents.</p>
+            </div>
+        </div>
+    </div>
 
-        <!-- About Section -->
-        <section id="about" class="tech-background">
-            <h2><i class="fas fa-info-circle icon"></i>About Repairs by Jazz</h2>
-            <p>Repairs by Jazz is your go-to destination for top-notch computer repair services. Our experienced technicians are committed to delivering fast, reliable, and affordable solutions to keep your devices running smoothly.</p>
-            <p>Our mission is to ensure customer satisfaction through quality service and support. We understand how crucial your devices are in your daily life, and we strive to restore them to optimal performance as quickly as possible.</p>
-            <p>Founded by Jazz, a passionate technician with years of hands-on experience, we treat every device like it's our own. No job is too big or too small for our team.</p>
-        </section>
+    <div class="container" id="about">
+        <h2>About Us</h2>
+        <p>At Repairs By Jazz, we pride ourselves on our commitment to quality and customer satisfaction. Our technicians have years of experience in the industry and are always ready to help you with your tech needs.</p>
+    </div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="tech-background">
-            <h2><i class="fas fa-envelope icon"></i>Contact Us</h2>
-            <p>If you have any questions or need further information, feel free to reach out to us through the form below or via email.</p>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
+    <div class="container" id="contact">
+        <h2>Contact</h2>
+        <p>If you have any questions or need assistance, feel free to reach out to us!</p>
+        <p>Email: info@repairsbyjazz.com</p>
+        <p>Phone: (123) 456-7890</p>
+    </div>
 
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="tech-background">
-            <h2><i class="fas fa-comments icon"></i>What Our Customers Say</h2>
-            <p>"Jazz is an amazing technician! They helped me recover my data quickly and efficiently. Highly recommend!" - Sarah L.</p>
-            <p>"Great service! My laptop was fixed within a few hours. Very professional!" - John D.</p>
-            <p>"I appreciate the clear communication throughout the repair process. Jazz really cares about their customers." - Emily T.</p>
-        </section>
+    <div class="container" id="testimonials">
+        <h2>Testimonials</h2>
+        <p>"Repairs By Jazz saved my laptop! Great service and friendly staff!" - Happy Customer</p>
+    </div>
 
-        <!-- Booking Section -->
-        <section id="booking" class="tech-background">
-            <h2><i class="fas fa-calendar-alt icon"></i>Book Your Appointment</h2>
-            <p>Ready to get your device repaired? Click the link below to book your appointment now!</p>
-            <a href="https://app.setmore.com/bookingpage/75d2067a-dc57-4763-91cb-53b4e56e3967" target="_blank" class="button">Book Now</a>
-        </section>
-    </main>
     <footer>
-        <p>&copy; 2024 Repairs By Jazz. All rights reserved. | <a href="#home" style="color: #ff69b4;">Back to Top</a></p>
+        <p>&copy; 2024 Repairs By Jazz. All rights reserved.</p>
     </footer>
-    <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('main section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
-        }
-    </script>
 </body>
+
 </html>
