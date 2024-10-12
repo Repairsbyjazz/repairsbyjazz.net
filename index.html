@@ -10,10 +10,11 @@
             background-color: #f0f0f0;
             margin: 0;
             padding: 0;
+            color: #333;
         }
         header {
-            background-color: #282828; /* Header background */
-            color: #ff4081; /* Header text color */
+            background-color: #282828;
+            color: #fff;
             padding: 20px;
             text-align: center;
         }
@@ -22,11 +23,16 @@
         }
         nav a {
             margin: 0 15px;
-            color: #ff4081; /* Link color */
+            color: #ff4081; /* Pink color */
             text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
         nav a:hover {
-            text-decoration: underline; /* Hover effect for links */
+            background-color: #ff4081; /* Pink hover */
+            color: white;
         }
         .hidden {
             display: none;
@@ -41,21 +47,26 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #282828; /* Footer background */
-            color: #fff; /* Footer text color */
-            position: fixed;
-            bottom: 0;
+            background-color: #282828;
+            color: #fff;
+            position: relative;
             width: 100%;
         }
         .logo {
-            max-width: 150px; /* Logo size */
+            max-width: 150px;
+        }
+        .gradient-background {
+            background: linear-gradient(to right, #ff4081, #00bcd4); /* Pink to Blue gradient */
+            padding: 20px;
+            border-radius: 5px;
+            color: white;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="your-logo.png" alt="Repairs By Jazz" class="logo"> <!-- Replace with your logo URL -->
+    <img src="your-logo.png" alt="Repairs By Jazz" class="logo"> <!-- Keep the original logo path -->
     <h1>Repairs By Jazz</h1>
     <nav>
         <a href="#" onclick="showPage('home')">Home</a>
@@ -67,7 +78,7 @@
     </nav>
 </header>
 
-<div id="home" class="content">
+<div id="home" class="content gradient-background">
     <h2>Welcome to Repairs by Jazz</h2>
     <p>Welcome to Repairs by Jazz, where we provide fast, reliable, and affordable computer repair services. Our expert technicians are dedicated to getting your devices up and running in no time!</p>
     <p>Whether it's a hardware issue, software problem, or data recovery, we're here to help. With years of experience and a commitment to quality, we stand by our work and strive for excellence in every job.</p>
@@ -85,14 +96,12 @@
         <li>Virus Removal</li>
         <li>Custom PC Builds</li>
     </ul>
-    <p>Each service is performed with utmost care and precision to ensure your satisfaction.</p>
 </div>
 
 <div id="about" class="content hidden">
     <h2>About Us</h2>
     <p>Repairs By Jazz is a locally owned and operated business. Our mission is to provide top-notch computer repair services while ensuring customer satisfaction.</p>
     <p>Our team of skilled technicians is equipped with the knowledge and tools to handle any computer issue.</p>
-    <p>We believe in transparency and will keep you informed throughout the repair process.</p>
 </div>
 
 <div id="contact" class="content hidden">
@@ -100,20 +109,18 @@
     <p>For inquiries, please reach out via email or phone.</p>
     <p>Email: info@repairsbyjazz.com</p>
     <p>Phone: (123) 456-7890</p>
-    <p>We are here to assist you with any questions or concerns!</p>
 </div>
 
 <div id="testimonials" class="content hidden">
     <h2>Testimonials</h2>
     <p>"Great service! My laptop was fixed within a day!" - Happy Customer</p>
     <p>"Jazz was very helpful and knowledgeable." - Satisfied Client</p>
-    <p>Our clients' feedback drives us to improve and provide the best service possible.</p>
 </div>
 
 <div id="booking" class="content hidden">
     <h2>Booking</h2>
     <p>To book an appointment, click the link below:</p>
-    <a href="https://your-setmore-link.com" target="_blank">Book Now</a> <!-- Keep your Setmore booking link unchanged -->
+    <a href="https://your-setmore-link.com" target="_blank">Book Now</a> <!-- Your Setmore booking link unchanged -->
 </div>
 
 <footer>
