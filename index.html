@@ -22,7 +22,7 @@
         }
         nav a {
             margin: 0 15px;
-            color: #ff4081;
+            color: #ff4081; /* Pink */
             text-decoration: none;
             font-weight: bold;
         }
@@ -49,17 +49,27 @@
             max-width: 150px;
         }
         .button {
-            background-color: #007BFF; /* Blue */
-            color: #fff;
-            padding: 10px 15px;
+            background-color: #ff4081; /* Pink */
+            color: white;
             border: none;
             border-radius: 5px;
+            padding: 10px 20px;
             cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
+            font-size: 16px;
         }
         .button:hover {
+            background-color: #e63946; /* Darker Pink */
+        }
+        .blue-button {
+            background-color: #007bff; /* Blue */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .blue-button:hover {
             background-color: #0056b3; /* Darker Blue */
         }
     </style>
@@ -67,7 +77,7 @@
 <body>
 
 <header>
-    <img src="logo#2.png" alt="Repairs By Jazz" class="logo">
+    <img src="logo#2.png" alt="Repairs By Jazz" class="logo"> <!-- Logo path -->
     <h1>Repairs By Jazz</h1>
     <nav>
         <a href="#" onclick="showPage('home')">Home</a>
@@ -75,57 +85,57 @@
         <a href="#" onclick="showPage('about')">About Us</a>
         <a href="#" onclick="showPage('contact')">Contact</a>
         <a href="#" onclick="showPage('testimonials')">Testimonials</a>
-        <a href="#" onclick="showPage('booking')" class="button">Booking</a>
+        <a href="#" onclick="showPage('booking')">Booking</a>
     </nav>
 </header>
 
 <div id="home" class="content">
     <h2>Welcome to Repairs by Jazz</h2>
-    <p>At Repairs by Jazz, we provide fast, reliable, and affordable computer repair services. Our expert technicians are dedicated to getting your devices up and running in no time!</p>
+    <p>Welcome to Repairs by Jazz, where we provide fast, reliable, and affordable computer repair services. Our expert technicians are dedicated to getting your devices up and running in no time!</p>
     <p>Whether it's a hardware issue, software problem, or data recovery, we're here to help. With years of experience and a commitment to quality, we stand by our work and strive for excellence in every job.</p>
     <p>Our friendly technicians will guide you through the repair process, ensuring you understand what's happening every step of the way.</p>
-    <a href="#" class="button" onclick="showPage('services')">Explore Our Services</a>
+    <button class="button" onclick="showPage('services')">Explore Our Services</button>
 </div>
 
 <div id="services" class="content hidden">
     <h2>Our Services</h2>
     <p>We offer a variety of services including:</p>
     <ul>
-        <li>Hardware Repairs: Fixing physical issues with your devices.</li>
-        <li>Software Troubleshooting: Resolving software malfunctions.</li>
-        <li>Data Recovery: Retrieving lost data from malfunctioning systems.</li>
-        <li>Virus Removal: Clearing malware and protecting your systems.</li>
-        <li>Custom PC Builds: Creating personalized systems based on your needs.</li>
+        <li>Hardware Repairs: From replacing components to fixing broken screens.</li>
+        <li>Software Troubleshooting: We resolve software issues to ensure your device runs smoothly.</li>
+        <li>Data Recovery: Recover lost or deleted files from your devices.</li>
+        <li>Virus Removal: We help protect your system from malware and unwanted software.</li>
+        <li>Custom PC Builds: Build a PC tailored to your needs and specifications.</li>
     </ul>
-    <p>All services come with a guarantee of quality, and we ensure you are satisfied with every repair.</p>
+    <p>Our goal is to ensure that you leave with a fully functioning device, and we provide a warranty for our services.</p>
 </div>
 
 <div id="about" class="content hidden">
     <h2>About Us</h2>
     <p>Repairs By Jazz is a locally owned and operated business. Our mission is to provide top-notch computer repair services while ensuring customer satisfaction.</p>
-    <p>With a team of skilled technicians equipped with the knowledge and tools to handle any computer issue, we are committed to making your experience as smooth as possible.</p>
-    <p>Our dedication to excellence sets us apart from the competition.</p>
+    <p>Our team of skilled technicians is equipped with the knowledge and tools to handle any computer issue. With a passion for technology and a dedication to customer service, we aim to exceed your expectations.</p>
 </div>
 
 <div id="contact" class="content hidden">
     <h2>Contact Us</h2>
     <p>For inquiries, please reach out via email or phone.</p>
-    <p>Email: <a href="mailto:info@repairsbyjazz.com">info@repairsbyjazz.com</a></p>
-    <p>Phone: <a href="tel:+1234567890">(123) 456-7890</a></p>
-    <p>We look forward to hearing from you!</p>
+    <p>Email: info@repairsbyjazz.com</p>
+    <p>Phone: (123) 456-7890</p>
+    <p>Our customer service team is available to assist you with any questions or concerns you may have.</p>
 </div>
 
 <div id="testimonials" class="content hidden">
     <h2>Testimonials</h2>
     <p>"Great service! My laptop was fixed within a day!" - Happy Customer</p>
     <p>"Jazz was very helpful and knowledgeable." - Satisfied Client</p>
-    <p>"I highly recommend Repairs By Jazz for anyone needing computer services." - Another Happy Customer</p>
+    <p>We pride ourselves on delivering excellent service, and we value the feedback of our customers.</p>
 </div>
 
 <div id="booking" class="content hidden">
     <h2>Booking</h2>
     <p>To book an appointment, click the button below:</p>
-    <a href="https://booking.setmore.com/scheduleappointment/743f9982-f8df-4945-b677-61c428baccc5" target="_blank" class="button">Book Now</a> <!-- Setmore booking link -->
+    <a href="https://booking.setmore.com/scheduleappointment/743f9982-f8df-4945-b677-61c428baccc5" target="_blank" class="blue-button">Book Now</a> <!-- Setmore booking link -->
+    <p>We look forward to helping you with your computer repair needs!</p>
 </div>
 
 <footer>
