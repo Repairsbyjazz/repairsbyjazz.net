@@ -7,9 +7,9 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0;
             margin: 0;
             padding: 0;
+            background: linear-gradient(to bottom, #ff4081, #00bcd4); /* Gradient background */
         }
         header {
             background-color: #000000; /* Black header */
@@ -41,15 +41,17 @@
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
         }
         .content {
-            background-color: #ffffff;
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
             padding: 40px;
-            margin: 20px;
+            margin: 20px auto;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
+            width: 80%; /* Responsive width */
+            display: none; /* Hide content by default */
         }
-        .content:hover {
-            transform: translateY(-5px);
+        .content.visible {
+            display: block; /* Show content when visible */
         }
         footer {
             text-align: center;
@@ -72,6 +74,7 @@
             transition: background-color 0.3s, transform 0.3s;
             font-weight: bold;
             margin-top: 20px;
+            display: inline-block; /* Ensure the button is inline */
         }
         button:hover {
             background-color: #0097a7; /* Darker blue on hover */
@@ -89,6 +92,9 @@
             }
             nav a {
                 margin: 10px 0;
+            }
+            .content {
+                width: 95%; /* Adjust width on smaller screens */
             }
         }
     </style>
@@ -108,14 +114,14 @@
     </nav>
 </header>
 
-<div id="home" class="content">
+<div id="home" class="content visible">
     <h2>Welcome to Repairs by Jazz</h2>
     <p>Welcome to Repairs by Jazz, where we provide fast, reliable, and affordable computer repair services. Our expert technicians are dedicated to getting your devices up and running in no time!</p>
     <p>Whether it's a hardware issue, software problem, or data recovery, we're here to help. With years of experience and a commitment to quality, we stand by our work and strive for excellence in every job.</p>
     <button class="3d-effect" onclick="showPage('services')">Explore Our Services</button>
 </div>
 
-<div id="services" class="content hidden">
+<div id="services" class="content">
     <h2>Our Services</h2>
     <p>We offer a variety of services including:</p>
     <ul>
@@ -129,14 +135,14 @@
     <button class="3d-effect" onclick="showPage('booking')">Book a Service Now</button>
 </div>
 
-<div id="about" class="content hidden">
+<div id="about" class="content">
     <h2>About Us</h2>
     <p>Repairs By Jazz is a locally owned and operated business. Our mission is to provide top-notch computer repair services while ensuring customer satisfaction.</p>
     <p>Our team of skilled technicians is equipped with the knowledge and tools to handle any computer issue. We value your trust and strive to exceed your expectations.</p>
     <p>Visit us to experience a friendly, professional service.</p>
 </div>
 
-<div id="contact" class="content hidden">
+<div id="contact" class="content">
     <h2>Contact Us</h2>
     <p>For inquiries, please reach out via email or phone.</p>
     <p>Email: info@repairsbyjazz.com</p>
@@ -144,17 +150,17 @@
     <button class="3d-effect" onclick="showPage('home')">Back to Home</button>
 </div>
 
-<div id="testimonials" class="content hidden">
+<div id="testimonials" class="content">
     <h2>Testimonials</h2>
     <p>"Great service! My laptop was fixed within a day!" - Happy Customer</p>
     <p>"Jazz was very helpful and knowledgeable." - Satisfied Client</p>
     <button class="3d-effect" onclick="showPage('booking')">Book Now</button>
 </div>
 
-<div id="booking" class="content hidden">
+<div id="booking" class="content">
     <h2>Booking</h2>
     <p>To book an appointment, click the link below:</p>
-    <a href="https://booking.setmore.com/scheduleappointment/743f9982-f8df-4945-b677-61c428baccc5" target="_blank" class="3d-effect">
+    <a href="https://booking.setmore.com/scheduleappointment/743f9982-f8df-4945-b677-61c428baccc5" target="_blank">
         <button>Book Now</button>
     </a> <!-- Setmore booking link -->
 </div>
@@ -167,9 +173,9 @@
     function showPage(page) {
         const pages = document.querySelectorAll('.content');
         pages.forEach(p => {
-            p.classList.add('hidden');
+            p.classList.remove('visible');
         });
-        document.getElementById(page).classList.remove('hidden');
+        document.getElementById(page).classList.add('visible');
     }
 
     // Show home page by default
