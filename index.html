@@ -6,78 +6,97 @@
     <title>Repairs By Jazz</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f0f0f0;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #ff4081; /* Pink */
-            color: #fff;
+            background-color: #000000; /* Black header */
+            color: #ffffff; /* White text */
             padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        .logo {
+            max-width: 150px;
+            margin-bottom: 10px;
         }
         nav {
-            margin: 20px 0;
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         nav a {
-            margin: 0 15px;
-            color: #282828; /* Dark color for contrast */
+            margin: 0 20px;
+            color: #ffffff; /* White text */
             text-decoration: none;
             font-weight: bold;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background 0.3s;
+            font-size: 18px;
+            transition: color 0.3s;
         }
         nav a:hover {
-            background-color: #282828; /* Dark hover background */
-            color: #ff4081; /* Pink text on hover */
-        }
-        .hidden {
-            display: none;
+            color: #00bcd4; /* Change color on hover */
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
         }
         .content {
             background-color: #ffffff;
-            padding: 20px;
+            padding: 40px;
             margin: 20px;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
         .content:hover {
-            transform: scale(1.02);
+            transform: translateY(-5px);
         }
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #282828; /* Dark footer */
-            color: #fff;
+            background-color: #000000; /* Black footer */
+            color: #ffffff; /* White text */
             position: relative;
             bottom: 0;
             width: 100%;
+            margin-top: 20px;
         }
-        .logo {
-            max-width: 150px;
-        }
-        .booking-button {
-            display: inline-block;
-            background-color: #ff4081; /* Pink */
-            color: #fff;
-            padding: 10px 20px;
+        button {
+            background: linear-gradient(90deg, #ff4081, #00bcd4); /* Pink to Blue gradient */
+            color: white;
+            border: none;
+            padding: 12px 20px;
             border-radius: 5px;
-            text-decoration: none;
-            transition: background 0.3s;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s;
+            font-weight: bold;
+            margin-top: 20px;
         }
-        .booking-button:hover {
-            background-color: #282828; /* Dark hover background */
+        button:hover {
+            background-color: #0097a7; /* Darker blue on hover */
+            transform: scale(1.05);
+        }
+        .3d-effect {
+            transition: transform 0.3s;
+        }
+        .3d-effect:hover {
+            transform: perspective(10px) translateZ(5px);
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            nav a {
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="logo#2.png" alt="Repairs By Jazz" class="logo"> <!-- Updated logo name -->
+    <img src="logo#2.png" alt="Repairs By Jazz" class="logo"> <!-- Logo file name -->
     <h1>Repairs By Jazz</h1>
     <nav>
         <a href="#" onclick="showPage('home')">Home</a>
@@ -91,10 +110,9 @@
 
 <div id="home" class="content">
     <h2>Welcome to Repairs by Jazz</h2>
-    <p>At Repairs by Jazz, we provide fast, reliable, and affordable computer repair services. Our expert technicians are dedicated to getting your devices up and running in no time!</p>
+    <p>Welcome to Repairs by Jazz, where we provide fast, reliable, and affordable computer repair services. Our expert technicians are dedicated to getting your devices up and running in no time!</p>
     <p>Whether it's a hardware issue, software problem, or data recovery, we're here to help. With years of experience and a commitment to quality, we stand by our work and strive for excellence in every job.</p>
-    <p>Our friendly technicians will guide you through the repair process, ensuring you understand what's happening every step of the way.</p>
-    <button onclick="showPage('services')">Explore Our Services</button>
+    <button class="3d-effect" onclick="showPage('services')">Explore Our Services</button>
 </div>
 
 <div id="services" class="content hidden">
@@ -107,13 +125,15 @@
         <li>Virus Removal</li>
         <li>Custom PC Builds</li>
     </ul>
-    <p>Each service is tailored to meet your specific needs, ensuring your devices are treated with care and expertise.</p>
+    <p>All services are performed with the utmost care and professionalism.</p>
+    <button class="3d-effect" onclick="showPage('booking')">Book a Service Now</button>
 </div>
 
 <div id="about" class="content hidden">
     <h2>About Us</h2>
     <p>Repairs By Jazz is a locally owned and operated business. Our mission is to provide top-notch computer repair services while ensuring customer satisfaction.</p>
-    <p>Our team of skilled technicians is equipped with the knowledge and tools to handle any computer issue. We pride ourselves on our customer service and the quality of our work.</p>
+    <p>Our team of skilled technicians is equipped with the knowledge and tools to handle any computer issue. We value your trust and strive to exceed your expectations.</p>
+    <p>Visit us to experience a friendly, professional service.</p>
 </div>
 
 <div id="contact" class="content hidden">
@@ -121,20 +141,22 @@
     <p>For inquiries, please reach out via email or phone.</p>
     <p>Email: info@repairsbyjazz.com</p>
     <p>Phone: (123) 456-7890</p>
-    <p>We look forward to assisting you with your computer needs!</p>
+    <button class="3d-effect" onclick="showPage('home')">Back to Home</button>
 </div>
 
 <div id="testimonials" class="content hidden">
     <h2>Testimonials</h2>
     <p>"Great service! My laptop was fixed within a day!" - Happy Customer</p>
     <p>"Jazz was very helpful and knowledgeable." - Satisfied Client</p>
-    <p>"I highly recommend Repairs By Jazz for all your computer needs!" - Loyal Customer</p>
+    <button class="3d-effect" onclick="showPage('booking')">Book Now</button>
 </div>
 
 <div id="booking" class="content hidden">
     <h2>Booking</h2>
     <p>To book an appointment, click the link below:</p>
-    <a class="booking-button" href="https://booking.setmore.com/scheduleappointment/743f9982-f8df-4945-b677-61c428baccc5" target="_blank">Book Now</a>
+    <a href="https://booking.setmore.com/scheduleappointment/743f9982-f8df-4945-b677-61c428baccc5" target="_blank" class="3d-effect">
+        <button>Book Now</button>
+    </a> <!-- Setmore booking link -->
 </div>
 
 <footer>
