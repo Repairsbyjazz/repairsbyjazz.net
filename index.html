@@ -69,7 +69,7 @@
 <body>
 
 <header>
-    <img src="logo#2.png" alt="Repairs By Jazz" class="logo">
+    <img src="logo.png" alt="Repairs By Jazz" class="logo">
     <h1 class="gradient-text">Repairs By Jazz</h1>
     <nav>
         <a href="#" onclick="showPage('home')">Home</a>
@@ -87,6 +87,13 @@
     <p>Whether it's a minor hardware glitch or a complex software issue, we have you covered. Our commitment to quality service means that we use the latest tools and techniques to tackle any problem effectively. With years of experience in the field, we guarantee that you will receive top-notch service every time you visit us.</p>
     <p>Our friendly technicians are passionate about technology and customer service. We believe in keeping our clients informed throughout the repair process, so you always know what's happening with your device.</p>
     <p>At Repairs By Jazz, we treat your devices as if they were our own. Trust us to provide you with a quick, efficient, and effective service every time. Let us help you get your technology back on track!</p>
+    <p>**Why Choose Us?** We understand that you have options when it comes to tech repairs. Here's why we stand out:</p>
+    <ul>
+        <li><strong>Fast Turnaround:</strong> We prioritize your time and aim to complete repairs as quickly as possible without compromising quality.</li>
+        <li><strong>Transparent Pricing:</strong> No hidden fees! We provide upfront quotes to ensure you know what to expect.</li>
+        <li><strong>Expert Technicians:</strong> Our team is skilled in various repair techniques and keeps up with the latest technology trends.</li>
+    </ul>
+    <p>Explore our services today and discover how we can assist you!</p>
     <button onclick="showPage('services')">Explore Our Services</button>
 </div>
 
@@ -101,6 +108,8 @@
         <li><strong>Custom PC Builds:</strong> Want a personalized gaming rig or a powerful workstation? We build custom PCs tailored to your specifications and needs, ensuring you get the perfect setup for your lifestyle.</li>
     </ul>
     <p>We pride ourselves on our quick turnaround times and exceptional customer service. No matter what issue you're facing, we're here to help! Our goal is to make your tech experience seamless and hassle-free.</p>
+    <p>**Customer Satisfaction Guarantee:** We are committed to ensuring our clients are satisfied with every repair we complete. If for any reason you are not happy with our service, let us know, and we'll make it right!</p>
+    <p>For a full list of services and pricing, visit our <a href="#" style="color: #ff4081;">Services page</a>.</p>
 </div>
 
 <div id="about" class="content hidden">
@@ -109,6 +118,7 @@
     <p>With a team of skilled technicians, we stay up to date with the latest technology trends and repair techniques. This allows us to offer effective solutions for any computer-related issue you may encounter.</p>
     <p>We understand the importance of your devices in your daily life. That’s why we treat each repair with the utmost care and attention, ensuring that your equipment is in the best hands.</p>
     <p>Our team is not just technically proficient but also deeply invested in customer relationships. We strive to create a friendly and welcoming environment where you can feel comfortable discussing your tech issues.</p>
+    <p>**Our Vision:** To be the leading provider of computer repair services in our community, known for our commitment to quality and customer satisfaction. We believe that every device deserves a second chance, and we are here to provide it.</p>
 </div>
 
 <div id="contact" class="content hidden">
@@ -117,25 +127,33 @@
     <p>Email: <a href="mailto:info@repairsbyjazz.com" style="color: #ff4081;">info@repairsbyjazz.com</a></p>
     <p>Phone: <a href="tel:+1234567890" style="color: #ff4081;">(123) 456-7890</a></p>
     <p>We’re here to answer your questions and help you with any issues you may have. Don't hesitate to get in touch! Your satisfaction is our priority, and we are always ready to assist you.</p>
+    <p>**Location:** Visit us at our office, conveniently located in the heart of the city. We welcome walk-ins, so feel free to stop by for a chat!</p>
+    <p>Our team is committed to providing the best service possible. Reach out to us via email or phone, and we’ll get back to you as soon as possible!</p>
 </div>
 
 <div id="testimonials" class="content hidden">
     <h2 class="gradient-text">Testimonials</h2>
     <p>Our customers are our best advocates! Here’s what some of them have to say:</p>
     <blockquote>
-        <p>"Great service! My laptop was fixed within a day!" - <em>Happy Customer</em></p>
+        <p>"Repairs By Jazz saved my laptop! I was worried about losing my files, but they were able to recover everything and fix my computer quickly. Highly recommend!" - <strong>Jane D.</strong></p>
     </blockquote>
     <blockquote>
-        <p>"Jazz was very helpful and knowledgeable. I highly recommend Repairs By Jazz!" - <em>Satisfied Client</em></p>
+        <p>"Fantastic service! The team was knowledgeable and friendly, and my computer runs like new again. I wouldn’t go anywhere else for repairs!" - <strong>Mark T.</strong></p>
     </blockquote>
-    <p>We value your feedback and are committed to providing the best service possible. Your satisfaction is our priority! Join our community of happy customers and experience the Repairs By Jazz difference.</p>
+    <blockquote>
+        <p>"I had a great experience with Repairs By Jazz. They fixed my software issues promptly and professionally. I appreciate their attention to detail!" - <strong>Emily R.</strong></p>
+    </blockquote>
+    <p>We appreciate the feedback from our valued customers and continually strive to improve our services. If you have a story to share, we’d love to hear it!</p>
 </div>
 
 <div id="booking" class="content hidden">
     <h2 class="gradient-text">Booking</h2>
-    <p>Ready to get your device repaired? To book an appointment, click the link below:</p>
-    <a href="https://booking.setmore.com/scheduleappointment/743f9982-f8df-4945-b677-61c428baccc5" target="_blank" style="color: #ff4081; font-weight: bold; text-decoration: underline;">Book Now</a>
-    <p>We look forward to serving you and getting your devices back in top shape! Our easy booking process is designed to fit your schedule. Don't wait—get your tech troubles resolved today!</p>
+    <p>Ready to get started? Book an appointment with us today!</p>
+    <p>We offer flexible scheduling options to accommodate your needs. Click the button below to book your service:</p>
+    <button style="background-color: #1976d2; color: #fff; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer;">
+        <a href="https://booking.setmore.com/scheduleappointment/743f9982-f8df-4945-b677-61c428baccc5" style="text-decoration: none; color: #fff;">Book Now</a>
+    </button>
+    <p>Our friendly technicians are eager to assist you with your tech needs. Don’t wait—secure your appointment today!</p>
 </div>
 
 <footer>
@@ -144,12 +162,15 @@
 
 <script>
     function showPage(page) {
+        // Hide all pages
         const pages = document.querySelectorAll('.content');
-        pages.forEach(p => {
-            p.classList.add('hidden');
-        });
+        pages.forEach(p => p.classList.add('hidden'));
+
+        // Show the selected page
         document.getElementById(page).classList.remove('hidden');
     }
+    // Show the home page by default
+    showPage('home');
 </script>
 </body>
 </html>
