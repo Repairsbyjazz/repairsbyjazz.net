@@ -64,6 +64,26 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        /* Button Styles */
+        .btn {
+            background-color: #ff4081; /* Initial button color */
+            color: #000; /* Button text color set to black */
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: rgba(255, 64, 129, 0.7); /* Hover background color */
+            color: #000; /* Keep the text color black on hover */
+        }
+        .btn a {
+            text-decoration: none;
+            color: #000; /* Ensure link text color is also black */
+        }
     </style>
 </head>
 <body>
@@ -94,7 +114,7 @@
         <li><strong>Expert Technicians:</strong> Our team is skilled in various repair techniques and keeps up with the latest technology trends.</li>
     </ul>
     <p>Explore our services today and discover how we can assist you!</p>
-    <button onclick="showPage('services')">Explore Our Services</button>
+    <button class="btn" onclick="showPage('services')">Explore Our Services</button>
 </div>
 
 <div id="services" class="content hidden">
@@ -109,7 +129,6 @@
     </ul>
     <p>We pride ourselves on our quick turnaround times and exceptional customer service. No matter what issue you're facing, we're here to help! Our goal is to make your tech experience seamless and hassle-free.</p>
     <p>**Customer Satisfaction Guarantee:** We are committed to ensuring our clients are satisfied with every repair we complete. If for any reason you are not happy with our service, let us know, and we'll make it right!</p>
-    
 </div>
 
 <div id="about" class="content hidden">
@@ -126,34 +145,20 @@
     <p>If you have any inquiries or need assistance, please feel free to reach out to us:</p>
     <p>Email: <a href="mailto:admin@repairsbyjazz.com" style="color: #ff4081;">admin@repairsbyjazz.com</a></p>
     <p>Phone: <a href="tel:+1234567890" style="color: #ff4081;">(780) 000-0000</a></p>
-    <p>We’re here to answer your questions and help you with any issues you may have. Don't hesitate to get in touch! Your satisfaction is our priority, and we are always ready to assist you.</p>
-    
-    <p>Our team is committed to providing the best service possible. Reach out to us via email or phone, and we’ll get back to you as soon as possible!</p>
+    <p>We’re here to answer your questions and help you with any issues you may have. Simply reach out, and we will respond promptly.</p>
 </div>
 
 <div id="testimonials" class="content hidden">
-    <h2 class="gradient-text">Testimonials</h2>
-    <p>Our customers are our best advocates! Here’s what some of them have to say:</p>
-    <blockquote>
-        
-    </blockquote>
-    <blockquote>
-       
-    </blockquote>
-    <blockquote>
-        
-    </blockquote>
-    <p>We appreciate the feedback from our valued customers and continually strive to improve our services. If you have a story to share, we’d love to hear it!</p>
+    <h2 class="gradient-text">What Our Clients Say</h2>
+    <p>"Repairs By Jazz saved my laptop! The service was quick, and the staff was super friendly." - Alex T.</p>
+    <p>"Great service at a great price. My computer runs like new thanks to Repairs By Jazz." - Maria L.</p>
+    <p>"I highly recommend Repairs By Jazz for any computer issues. They fixed my desktop in no time." - James K.</p>
 </div>
 
 <div id="booking" class="content hidden">
-    <h2 class="gradient-text">Booking</h2>
-    <p>Ready to get started? Book an appointment with us today!</p>
-    <p>We offer flexible scheduling options to accommodate your needs. Click the button below to book your service:</p>
-    <button style="background-color: #255, 64, 129, 0.7; color: #fff; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer;">
-        <a href="https://booking.setmore.com/scheduleappointment/743f9982-f8df-4945-b677-61c428baccc5" style="text-decoration: none; color: #fff;">Book Now</a>
-    </button>
-    <p>Our friendly technician is eager to assist you with your tech needs. Don’t wait—secure your appointment today!</p>
+    <h2 class="gradient-text">Book a Service</h2>
+    <p>To book a repair service, please click the button below to schedule an appointment through our Setmore booking page.</p>
+    <button class="btn"><a href="https://booking.setmore.com/scheduleappointment/743f9982-f8df-4945-b677-61c428baccc5" style="text-decoration: none; color: #000;">Book Now</a></button>
 </div>
 
 <footer>
@@ -161,16 +166,12 @@
 </footer>
 
 <script>
-    function showPage(page) {
-        // Hide all pages
+    function showPage(pageId) {
         const pages = document.querySelectorAll('.content');
-        pages.forEach(p => p.classList.add('hidden'));
-
-        // Show the selected page
-        document.getElementById(page).classList.remove('hidden');
+        pages.forEach(page => page.classList.add('hidden'));
+        document.getElementById(pageId).classList.remove('hidden');
     }
-    // Show the home page by default
-    showPage('home');
 </script>
+
 </body>
 </html>
