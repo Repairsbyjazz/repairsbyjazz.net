@@ -3,13 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repairs by Jazz - Our Services</title>
+    <title>Repairs by Jazz</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(to right, #ff1493, #9932cc);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav {
+            margin: 10px 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
         }
 
         .content {
@@ -58,10 +81,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .service-section p {
-            flex: 1;
-        }
-
         .service-section.reverse {
             flex-direction: row-reverse;
         }
@@ -78,7 +97,24 @@
     </style>
 </head>
 <body>
-    <div class="content">
+    <header>
+        <h1>Repairs by Jazz</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+            <a href="https://booking.setmore.com/scheduleappointment/743f9982-f8df-4945-b677-61c428baccc5">Booking</a>
+        </nav>
+    </header>
+
+    <div class="content" id="home">
+        <h2 class="gradient-text">Welcome to Repairs by Jazz</h2>
+        <p>We provide comprehensive computer repair services tailored to your needs. Whether it's hardware, software, or data recovery, our skilled technicians are here to help you get back on track!</p>
+    </div>
+
+    <div class="content" id="services">
         <h2 class="gradient-text">Our Services</h2>
 
         <div class="service-section">
@@ -109,6 +145,24 @@
         <p>We pride ourselves on our quick turnaround times and exceptional customer service. No matter what issue you're facing, we're here to help! Our goal is to make your tech experience seamless and hassle-free.</p>
 
         <p><strong>Customer Satisfaction Guarantee:</strong> We are committed to ensuring our clients are satisfied with every repair we complete. If for any reason you are not happy with our service, let us know, and we'll make it right!</p>
+    </div>
+
+    <div class="content" id="about">
+        <h2 class="gradient-text">About Us</h2>
+        <p>At Repairs by Jazz, we have years of experience in the tech industry. Our team is passionate about technology and dedicated to providing top-notch service to our clients. We believe in transparency, integrity, and customer satisfaction, making us your go-to for all computer repair needs.</p>
+    </div>
+
+    <div class="content" id="testimonials">
+        <h2 class="gradient-text">Testimonials</h2>
+        <p>"Repairs by Jazz did an amazing job on my computer. Fast, friendly, and reliable service!" - Satisfied Customer</p>
+        <p>"I highly recommend Jazz for any computer issues. They fixed my laptop quickly and efficiently." - Happy Client</p>
+    </div>
+
+    <div class="content" id="contact">
+        <h2 class="gradient-text">Contact Us</h2>
+        <p>If you have any questions or need assistance, feel free to reach out!</p>
+        <p>Phone: 780 224 9577</p>
+        <p>Email: <a href="mailto:admin@repairsbyjazz.net">admin@repairsbyjazz.net</a></p>
     </div>
 
     <div class="footer">
