@@ -3,177 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repairs By Jazz</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Repairs by Jazz</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom right, #ff4081, #1976d2);
             margin: 0;
             padding: 0;
-            color: #000; /* Set default text color to black */
-            display: flex; /* Allows for column layout with navigation on the side */
+            background-color: black;
+            color: white;
         }
-        header {
-            background-color: #000;
-            color: #fff;
-            padding: 20px;
-            text-align: left;
+
+        .container {
             display: flex;
-            align-items: center;
+            flex-direction: row;
+            padding: 20px;
+            min-height: 100vh;
         }
+
         .logo {
-            max-width: 200px;
-            margin-right: 20px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            max-width: 150px;
         }
+
         nav {
-            background-color: #000;
-            padding: 20px;
-            height: 100vh;
-            width: 250px;
+            position: absolute;
+            top: 180px;
+            left: 20px;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            text-align: left;
         }
+
         nav a {
-            color: #ff4081;
             text-decoration: none;
-            font-weight: bold;
-            padding: 10px 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            width: 100%;
-            transition: background-color 0.3s;
+            color: pink;
+            margin-bottom: 20px;
+            font-size: 1.2em;
         }
-        nav a:hover {
-            background-color: rgba(255, 64, 129, 0.7);
-        }
-        .content-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .content {
-            background-color: #fff; /* White background for the content box */
-            padding: 40px;
-            margin: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            height: calc(100vh - 160px); /* Adjust height to fill the page */
-            overflow: auto; /* Allows scrolling if content exceeds */
-            color: #000; /* Set text color for better visibility */
-        }
-        footer {
+
+        .header {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             text-align: center;
-            padding: 20px;
-            background-color: #000;
-            color: #fff;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            color: white;
         }
-        /* Gradient text */
-        .gradient-text {
-            background: linear-gradient(to right, #ff4081, #1976d2);
+
+        .header h1 {
+            font-size: 2.5em;
+            background: linear-gradient(to right, pink, lightblue);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: transparent;
+            margin: 0;
         }
-        /* Button Styles */
-        .btn {
-            background-color: #ff4081; /* Initial button color */
-            color: #000; /* Button text color set to black */
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s;
+
+        .main-content {
+            margin-left: 250px; /* Space for the links */
+            padding: 20px;
+            background: linear-gradient(to bottom, pink, lightblue);
+            border-radius: 10px;
+            width: calc(100% - 270px); /* Fill the page to the right of the links */
+            color: black;
         }
-        .btn:hover {
-            background-color: rgba(255, 64, 129, 0.7); /* Hover background color */
-            color: #000; /* Keep the text color black on hover */
-        }
-        .btn a {
-            text-decoration: none;
-            color: #000; /* Ensure link text color is also black */
-        }
-        .hidden {
-            display: none;
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: white;
+            font-size: 0.8em;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <img src="logo.png" alt="Repairs By Jazz" class="logo">
-    <h1 class="gradient-text">Repairs By Jazz</h1>
-</header>
+    <div class="container">
+        <!-- Logo at the top left -->
+        <img src="logo.png" alt="Repairs by Jazz Logo" class="logo">
 
-<nav>
-    <a href="#" onclick="showPage('home')">Home</a>
-    <a href="#" onclick="showPage('services')">Services</a>
-    <a href="#" onclick="showPage('about')">About Us</a>
-    <a href="#" onclick="showPage('contact')">Contact</a>
-    <a href="#" onclick="showPage('testimonials')">Testimonials</a>
-    <a href="#" onclick="showPage('booking')">Booking</a>
-</nav>
+        <!-- Navigation links -->
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#">Testimonials</a>
+            <a href="#">Booking</a>
+        </nav>
 
-<div class="content-container">
-    <div id="home" class="content">
-        <h2 class="gradient-text">Welcome to Repairs by Jazz</h2>
-        <p>Welcome to Repairs by Jazz, your trusted partner for fast, reliable, and affordable computer repair services. Our dedicated team of expert technicians is here to solve all your tech problems, ensuring your devices are back up and running in no time!</p>
-        <p>Whether it's a minor hardware glitch or a complex software issue, we have you covered. Our commitment to quality service means that we use the latest tools and techniques to tackle any problem effectively. With years of experience in the field, we guarantee that you will receive top-notch service every time you visit us.</p>
-        <p>Our friendly technicians are passionate about technology and customer service. We believe in keeping our clients informed throughout the repair process, so you always know what's happening with your device.</p>
-        <p>At Repairs By Jazz, we treat your devices as if they were our own. Trust us to provide you with a quick, efficient, and effective service every time. Let us help you get your technology back on track!</p>
-        <button class="btn" onclick="showPage('services')">Explore Our Services</button>
+        <!-- Business name in the center -->
+        <div class="header">
+            <h1>Repairs by Jazz</h1>
+        </div>
+
+        <!-- Main content area -->
+        <div class="main-content">
+            <h2>Welcome to Repairs by Jazz</h2>
+            <p>Welcome to Repairs by Jazz, your trusted partner for fast, reliable, and affordable computer repair services. Our dedicated team of expert technicians is here to solve all your tech problems, ensuring your devices are back up and running in no time!</p>
+            <p>Whether it's a minor hardware glitch or a complex software issue, we have you covered. Our services include diagnostics, repair, maintenance, and support for all types of computers and tech devices.</p>
+        </div>
     </div>
 
-    <div id="services" class="content hidden">
-        <h2 class="gradient-text">Our Services</h2>
-        <p>At Repairs by Jazz, we offer a comprehensive range of services to cater to all your computer needs. Our services include:</p>
-        <ul>
-            <li><strong>Hardware Repairs:</strong> From broken screens to malfunctioning components, we can fix it all.</li>
-            <li><strong>Software Troubleshooting:</strong> We can diagnose and resolve any software problems to ensure your system runs smoothly.</li>
-            <li><strong>Data Recovery:</strong> Lost important files? We specialize in data recovery.</li>
-            <li><strong>Virus Removal:</strong> We offer comprehensive virus removal services to keep your computer safe.</li>
-            <li><strong>Custom PC Builds:</strong> We build custom PCs tailored to your specifications.</li>
-        </ul>
-    </div>
-
-    <div id="about" class="content hidden">
-        <h2 class="gradient-text">About Us</h2>
-        <p>Repairs By Jazz is a locally owned and operated business dedicated to providing high-quality computer repair services.</p>
-    </div>
-
-    <div id="contact" class="content hidden">
-        <h2 class="gradient-text">Contact Us</h2>
-        <p>Email: <a href="mailto:admin@repairsbyjazz.com" style="color: #ff4081;">admin@repairsbyjazz.com</a></p>
-        <p>Phone: <a href="tel:+17800000000" style="color: #ff4081;">(780) 000-0000</a></p>
-    </div>
-
-    <div id="testimonials" class="content hidden">
-        <h2 class="gradient-text">What Our Clients Say</h2>
-        <p>"Repairs By Jazz saved my laptop! The service was quick, and the staff was super friendly." - Alex T.</p>
-    </div>
-
-    <div id="booking" class="content hidden">
-        <h2 class="gradient-text">Book a Service</h2>
-        <p>To book a repair service, please click the button below to schedule an appointment through our Setmore booking page.</p>
-        <button class="btn"><a href="https://booking.setmore.com/scheduleappointment/743f9982-f8df-4945-b677-61c428baccc5" style="text-decoration: none; color: #000;">Book Now</a></button>
-    </div>
-</div>
-
-<footer>
-    <p>&copy; 2024 Repairs By Jazz. All rights reserved.</p>
-</footer>
-
-<script>
-    function showPage(pageId) {
-        const pages = document.querySelectorAll('.content');
-        pages.forEach(page => page.classList.add('hidden'));
-        document.getElementById(pageId).classList.remove('hidden');
-    }
-</script>
+    <!-- Footer -->
+    <footer>
+        © 2024 Repairs by Jazz. All rights reserved.
+    </footer>
 
 </body>
 </html>
