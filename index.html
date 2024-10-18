@@ -8,101 +8,144 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f8c8d1, #e6f2ff);
             display: flex;
-            background: linear-gradient(to bottom, #f2a6c3, #b5e0f8);
+            flex-direction: column;
+            align-items: center; /* Center horizontally */
+            justify-content: flex-start; /* Start from the top */
+            min-height: 100vh; /* Full height */
         }
         header {
             background-color: black;
-            display: flex;
-            align-items: center;
-            padding: 20px; /* Increased padding for better spacing */
-            width: 100%;
             color: white;
-        }
-        #logo {
-            width: 200px; /* Increased width for a larger logo */
-            margin-right: 20px; /* Space between logo and title */
+            padding: 20px;
+            text-align: center;
+            width: 100%; /* Full width */
         }
         nav {
+            position: fixed;
+            top: 60px; /* Position under header */
+            left: 0;
+            width: 200px; /* Width for navigation */
             background-color: black;
             padding: 15px;
-            width: 200px;
-            color: pink;
-            height: 100vh; /* Full height */
-            position: sticky;
-            top: 0; /* Fix navigation to the top */
+            border-radius: 0 8px 8px 0; /* Round right corners */
+            height: calc(100% - 60px); /* Full height minus header */
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0; /* Added margin reset */
-        }
-        nav ul li {
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
             margin: 10px 0;
         }
-        nav ul li a {
-            color: pink;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav ul li a:hover {
+        nav a:hover {
             text-decoration: underline;
         }
         .content {
+            margin-left: 220px; /* Space for navigation menu */
             padding: 20px;
-            flex-grow: 1; /* Take up remaining space */
-            max-width: 800px; /* Limit the width of content */
-            margin-left: 20px; /* Space between nav and content */
-        }
-        h1 {
-            color: lightblue;
-            text-align: center; /* Center the title */
-            margin: 0; /* Reset margin */
-        }
-        h2 {
-            color: darkblue; /* Set a color for the section heading */
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 80%; /* Adjust width to be more centered */
+            max-width: 800px; /* Maximum width */
+            top: 80px; /* Align with navigation */
+            position: relative; /* Allow positioning */
+            min-height: calc(100vh - 120px); /* Full height minus header and footer */
         }
         footer {
-            text-align: center;
-            padding: 10px;
             background-color: black;
             color: white;
+            text-align: center;
+            padding: 10px;
             position: relative;
             bottom: 0;
             width: 100%;
+            margin-top: 20px; /* Space between content and footer */
         }
     </style>
 </head>
 <body>
     <header>
-        <a href="index.html">
-            <img id="logo" src="logo.png" alt="Repairs by Jazz Logo">
-        </a>
+        <img src="logo.png" alt="Repairs by Jazz Logo">
         <h1>Repairs by Jazz</h1>
     </header>
+
     <nav>
-        <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#booking">Booking</a></li>
-        </ul>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#booking">Booking</a>
     </nav>
-    <div class="content">
+
+    <div class="content" id="home">
         <h2>Welcome to Repairs by Jazz</h2>
-        <p>
-            Welcome to Repairs by Jazz, your trusted partner for fast, reliable, and affordable computer repair services. Our dedicated team of expert technicians is here to solve all your tech problems, ensuring your devices are back up and running in no time!
-        </p>
-        <p>
-            Whether it's a minor hardware glitch or a complex software issue, we have you covered. Our services include diagnostics, repair, maintenance, and support for all types of computers and tech devices.
-        </p>
-        <p>
-            Our goal is to provide you with the best possible service to get your devices functioning at their best. We pride ourselves on our quick turnaround times and customer satisfaction. If you need assistance, don’t hesitate to reach out to us!
-        </p>
+        <p>Welcome to Repairs by Jazz, your trusted partner for fast, reliable, and affordable computer repair services. Our dedicated team of expert technicians is here to solve all your tech problems, ensuring your devices are back up and running in no time!</p>
+        <p>Whether it's a minor hardware glitch or a complex software issue, we have you covered. Our services include diagnostics, repair, maintenance, and support for all types of computers and tech devices.</p>
+        <p>Our goal is to provide you with the best possible service to get your devices functioning at their best. We pride ourselves on our quick turnaround times and customer satisfaction. If you need assistance, don’t hesitate to reach out to us!</p>
     </div>
+
+    <div class="content" id="services" style="display:none;">
+        <h2>Services</h2>
+        <p>Our services include:</p>
+        <ul>
+            <li>Diagnostic Services</li>
+            <li>Hardware Repairs</li>
+            <li>Software Troubleshooting</li>
+            <li>Regular Maintenance</li>
+            <li>Data Recovery</li>
+        </ul>
+    </div>
+
+    <div class="content" id="about" style="display:none;">
+        <h2>About Us</h2>
+        <p>Repairs by Jazz is a dedicated team of technology enthusiasts with a passion for helping customers resolve their computer issues. Our mission is to deliver exceptional service and support to our clients, ensuring that their devices are always functioning at their best.</p>
+    </div>
+
+    <div class="content" id="contact" style="display:none;">
+        <h2>Contact Us</h2>
+        <p>You can reach us at:</p>
+        <p>Phone: 780 224 9577</p>
+        <p>Email: <a href="mailto:admin@repairsbyjazz.net">admin@repairsbyjazz.net</a></p>
+    </div>
+
+    <div class="content" id="testimonials" style="display:none;">
+        <h2>Testimonials</h2>
+        <p>"Repairs by Jazz saved my laptop! Quick and efficient service." - Happy Customer</p>
+        <p>"Excellent support and friendly staff. Highly recommend!" - Satisfied Client</p>
+    </div>
+
+    <div class="content" id="booking" style="display:none;">
+        <h2>Booking</h2>
+        <p>To book a service, please visit our booking page <a href="https://booking.setmore.com/scheduleappointment/743f9982-f8df-4945-b677-61c428baccc5">here</a>.</p>
+    </div>
+
     <footer>
-        <p>© 2024 Repairs by Jazz. All rights reserved.</p>
+        <p>&copy; 2024 Repairs by Jazz. All rights reserved.</p>
     </footer>
+
+    <script>
+        const links = document.querySelectorAll('nav a');
+        const contents = document.querySelectorAll('.content');
+
+        links.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = this.getAttribute('href').substring(1);
+
+                contents.forEach(content => {
+                    content.style.display = 'none'; // Hide all content
+                });
+
+                document.getElementById(target).style.display = 'block'; // Show target content
+            });
+        });
+
+        // Show the home section by default
+        document.getElementById('home').style.display = 'block';
+    </script>
 </body>
 </html>
